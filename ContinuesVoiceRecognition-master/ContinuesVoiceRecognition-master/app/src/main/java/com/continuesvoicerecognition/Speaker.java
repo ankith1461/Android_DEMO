@@ -7,9 +7,6 @@ import android.speech.tts.TextToSpeech;
 import java.util.HashMap;
 import java.util.Locale;
 
-/**
- * Created by Anusha on 20-Jan-16.
- */
 public class Speaker implements TextToSpeech.OnInitListener {
 
     private TextToSpeech tts;

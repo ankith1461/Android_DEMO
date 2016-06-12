@@ -3,33 +3,43 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
-  
+
     <View
         android:id="@+id/view1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentRight="true" />
+        android:background="@drawable/background_smart_hafaz"/>
+
+    <ImageView
+        android:id="@+id/ImageView1"
+        android:layout_marginLeft="80dp"
+        android:layout_marginRight="80dp"
+        android:layout_marginTop="10dp"
+        android:layout_width="wrap_content"
+        android:layout_height="110dp"
+        android:src="@drawable/logo_smart_hafaz_1"
+        />
 
     <TextView
         android:id="@+id/result_tv"
+        android:layout_below="@+id/ImageView1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textSize="18dp"
         android:textStyle="italic"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="0dp"
         android:textColor="#1a4067"
-        android:text="Sila maklumkan nama surah"
+        android:text=""
+        android:visibility="gone"
         />
 
     <EditText android:id="@+id/txtText"
-        android:layout_width="fill_parent"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Enter some text to speak"
         android:layout_below="@+id/result_tv"
-        android:layout_marginTop="20dp"
-        android:layout_margin="10dp"/>
+        android:background="@drawable/chapter_name"
+        />
 
     <TextView
         android:id="@+id/view_text"
@@ -39,48 +49,72 @@
         android:textStyle="italic"
         android:layout_centerHorizontal="true"
         android:layout_below="@+id/txtText"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="0dp"
         android:textColor="#1a4067"
-        android:text="To Display sResult"
+        android:text=""
+        android:visibility="gone"
+        />
+
+
+    <TextView
+        android:id="@+id/TextView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="18dp"
+        android:layout_below="@+id/view_text"
+        android:textStyle="italic"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="0dp"
+        android:textColor="#1a4067"
+        android:text=""
+        android:visibility="gone"
+        />
+
+    <EditText android:id="@+id/EditText2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint=""
+        android:layout_below="@+id/txtText"
+        android:background="@drawable/audio_level"
         />
 
   <Button
       android:id="@+id/start_listen_btn"
-      android:layout_width="100dp"
-      android:layout_height="80dp"
-      android:text="@string/start_listening"
-      android:layout_below="@+id/result_tv"
-      android:layout_marginTop="150dp"
-      android:layout_marginLeft="50dp"
-      android:layout_centerInParent="false"
-      android:textStyle="italic"
-      android:textColor="#1a4067"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_below="@+id/EditText2"
+      android:layout_alignParentLeft="true"
+      style="?android:attr/borderlessButtonStyle"
+      android:background="@drawable/start_recording"
       />
 
     <Button
         android:id="@+id/stop_listen_btn"
-        android:layout_width="100dp"
-        android:layout_height="80dp"
-        android:layout_below="@+id/result_tv"
-        android:layout_toRightOf="@+id/start_listen_btn"
-        android:layout_centerHorizontal="false"
-        android:layout_marginTop="150dp"
-        android:layout_marginLeft="50dp"
-        android:text="@string/stop_listening"
-        android:textStyle="italic"
-        android:textColor="#1a4067"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/EditText2"
+        android:layout_alignParentRight="true"
+        style="?android:attr/borderlessButtonStyle"
+        android:background="@drawable/stop_learning"
         />
 
     <Button
         android:id="@+id/text_to_speech"
-        android:layout_width="100dp"
-        android:layout_height="80dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_below="@+id/stop_listen_btn"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="20dp"
-        android:text="Speech"
-        android:textStyle="italic"
-        android:textColor="#1a4067"
+        style="?android:attr/borderlessButtonStyle"
+        android:background="@drawable/button_speech"
         />
 
+    <Button
+        android:id="@+id/main_next"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/text_to_speech"
+        android:layout_alignParentRight="true"
+        style="?android:attr/borderlessButtonStyle"
+        android:background="@drawable/button_back"
+        />
 </RelativeLayout>

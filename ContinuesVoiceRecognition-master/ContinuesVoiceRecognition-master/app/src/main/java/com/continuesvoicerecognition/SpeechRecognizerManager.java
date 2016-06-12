@@ -12,6 +12,7 @@ import android.speech.SpeechRecognizer;
 import android.util.Log;
 
 import java.util.ArrayList;
+import java.util.Locale;
 
 public class SpeechRecognizerManager {
 
@@ -21,8 +22,6 @@ public class SpeechRecognizerManager {
 
     protected boolean mIsListening;
     //private boolean mIsStreamSolo;
-
-
     //private boolean mMute=true;
 
     private final static String TAG="SpeechRecognizerManager";
@@ -41,8 +40,8 @@ public class SpeechRecognizerManager {
        // mAudioManager = (AudioManager) context.getSystemService(Context.AUDIO_SERVICE);
 
         mSpeechRecognizerIntent = new Intent(RecognizerIntent.ACTION_RECOGNIZE_SPEECH);
-        mSpeechRecognizerIntent.putExtra(RecognizerIntent.EXTRA_LANGUAGE_MODEL,
-                RecognizerIntent.LANGUAGE_MODEL_FREE_FORM);
+        mSpeechRecognizerIntent.putExtra(RecognizerIntent.EXTRA_LANGUAGE_MODEL,RecognizerIntent.LANGUAGE_MODEL_FREE_FORM);
+        mSpeechRecognizerIntent.putExtra(RecognizerIntent.EXTRA_LANGUAGE, "ms_MY");
         mSpeechRecognizerIntent.putExtra(RecognizerIntent.EXTRA_CALLING_PACKAGE,
                 context.getPackageName());
        //mSpeechRecognizerIntent.putExtra(RecognizerIntent.EXTRA_SPEECH_INPUT_COMPLETE_SILENCE_LENGTH_MILLIS, 20000);
@@ -156,7 +155,7 @@ public class SpeechRecognizerManager {
                 public void run() {
                     listenAgain();
                 }
-            },100);
+            },10);
 
 
         }
